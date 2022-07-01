@@ -16,6 +16,10 @@
 
 #### This is a browser game written in JavaScript, CSS, and HTML. Users move numbered blocks around a playing grid- up, down, left, and right. When two blocks with the same number touch, they combine into one block and display the sum of the two numbers. Each move adds one more numbered block to the grid. When the user's blocks total 2048, they win. If they can make no more moves, they lose.
 
+## **_Trello Board_**
+
+| [Trello] https://trello.com/b/TnGyK7lh/browser-game-tbd |
+
 ### **_Technologies Used_**
 
 - JavaScript
