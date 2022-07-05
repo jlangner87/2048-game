@@ -5,21 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>2048 Home</title>
+  <title>2048</title>
 </head>
 <body>
   <section class="topBar">
     <h1>2048</h1>
   </section>
-  <h1 class="titleBar">A number tile game</h1>
 
+  <div class="score-container">Score: 0</div>
+  <div class="top-buttons">
+    <button type="button" class="new-game">NEW GAME</button>
+    <button type="button" class="undo">UNDO</button>
+  </div>
+
+
+  <div class="grid"></div>
   
-<div class="mock-grid">
-  <button type="button">PLAY</button>
-  <button type="button">HOW TO PLAY</button>
-  <button type="buton">HIGH SCORES</button>
+<div class="bottom-display">
+  <div class="time">Time: 0:00</div>
+  <div class="moves">Moves: 0</div>
 </div>
+  
   <script src="app.js"></script>  
-
 </body>
 </html>

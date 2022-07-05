@@ -1,4 +1,144 @@
+/* Style applied to all pages */
 * {
-  background-color: black;
-  color: white;
+ background-color: #ffe1bd;
+ margin: auto;
+}
+
+.topBar {
+  display: grid;
+  margin-top: 12px;
+  background-color: #ffe1bd;
+  text-align: center;
+  color: #45444b;
+  font-size: 68px;
+}
+
+.titleBar {
+  font-size: 32;
+  color: #45444b;
+  display: grid;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.mock-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+  background-color: #228c80;
+  border-radius: 5%;
+  border: 5px solid #45444b;
+}
+
+/* Style applied to gameboard page */
+.score-container {
+  display: grid;
+  color: #45444b;
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 12px;
+  }
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  color: #45444b;
+  margin-top: 12px;
+}
+  
+.new-game {
+  background-color: #de670e;
+  color: #45444b;
+  height: 60px;
+  width: 120px;
+  border: 2px solid #45444b;
+  border-radius: 6%;
+  margin-bottom: 12px;
+  margin-left: 35%;
+  margin-right: 5%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.undo {
+  background-color: #de670e;
+  color: #45444b;
+  height: 60px;
+  width: 120px;
+  border: 2px solid #45444b;
+  border-radius: 6%;
+  margin-bottom: 12px;
+  margin-right: 35%;
+  margin-left: 5%;
+  font-size: 24px;
+  cursor: pointer;
+}
+  
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+  background-color: #228c80;
+  border-radius: 5%;
+  border: 5px solid #45444b
+}
+
+.bottom-display {
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  color: #45444b;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.time {
+  margin-left: 30%;
+  margin-right: 5%;
+
+}
+
+.moves {
+  margin-right: 30%;
+  margin-left: 5%;
+}
+
+/* Style applied to  Home Page */
+button {
+  background-color: #de670e;
+  color: #45444b;
+  height: 120px;
+  width: 240px;
+  border: 2px solid #45444b;
+  border-radius: 6%;
+  margin-bottom: 36px;
+  margin-left: 30%;
+  margin-right: 30%;
+  font-size: 50px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* Style applied to HOW TO page */
+#how-to-play {
+  background-color: #228c80;
+  color:  white;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 24px;
+  vertical-align: text-top;
+  text-justify: auto
+}
+
+/* Style applied to high-score page */
+#high-scores-list {
+  background-color: #228c80;
+  color:  white;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 24px;
+  vertical-align: text-top;
+  text-justify: auto
 }
