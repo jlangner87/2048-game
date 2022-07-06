@@ -42,6 +42,6 @@
 
 #### _Credits_
 
-Count-Up Timer [tutorial] (https://daily-dev-tips.com/posts/vanilla-javascript-timer/)
+drawBoard and populateBoard functions are based on logic from [video] (https://youtu.be/aDn2g8XfSMc)
 
 ---
