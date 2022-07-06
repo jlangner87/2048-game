@@ -79,22 +79,18 @@ const shiftDown = () => {
       let squareTwo = Number(squares[i + 4].innerHTML)
       let squareThree = Number(squares[i + 8].innerHTML)
       let squareFour = Number(squares[i + 12].innerHTML)
-
       let squareFive = Number(squares[i + 1].innerHTML)
       let squareSix = Number(squares[i + 5].innerHTML)
       let squareSeven = Number(squares[i + 9].innerHTML)
       let squareEight = Number(squares[i + 13].innerHTML)
-
       let squareNine = Number(squares[i + 2].innerHTML)
       let squareTen = Number(squares[i + 6].innerHTML)
       let squareEleven = Number(squares[i + 10].innerHTML)
       let squareTwelve = Number(squares[i + 14].innerHTML)
-
       let squareThirteen = Number(squares[i + 3].innerHTML)
       let squareFourteen = Number(squares[i + 7].innerHTML)
       let squareFifteen = Number(squares[i + 11].innerHTML)
       let squareSixteen = Number(squares[i + 15].innerHTML)
-
       let columnOne = [squareOne, squareTwo, squareThree, squareFour]
       let columnTwo = [squareFive, squareSix, squareSeven, squareEight]
       let columnThree = [squareNine, squareTen, squareEleven, squareTwelve]
@@ -105,21 +101,21 @@ const shiftDown = () => {
         squareSixteen
       ]
       let allColumns = [columnOne, columnTwo, columnThree, columnFour]
-      console.log(allColumns)
-      const filledSquares = allColumns.filter((digit) => {
-        return digit >= 1
+      allColumns.forEach((elemnt) => {
+        let filledSquares = elemnt.filter((digit) => {
+          return digit >= 1
+        })
+        // console.log(filledSquares)
+        let empty = 4 - filledSquares.length
+        let emptyArray = Array(empty).fill('')
+        // console.log(emptyArray)
+        let newArray = filledSquares.concat(emptyArray)
+        console.log(newArray)
+        document.querySelectorAll('allColumns').innerHTML = newArray[0]
       })
-      let empty = 4 - filledSquares.length
-      let emptyArray = Array(empty).fill('')
-      let newArray = filledSquares.concat(emptyArray)
-      squares[i].innerHTML = newArray[0]
-      squares[i + 1].innerHTML = newArray[1]
-      squares[i + 2].innerHTML = newArray[2]
-      squares[i + 3].innerHTML = newArray[3]
     }
   }
 }
-shiftDown()
 
 // const shiftUp = () => {}
 
