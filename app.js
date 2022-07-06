@@ -1,10 +1,12 @@
 // game variables
 const boardGrid = document.querySelector('.grid')
 let squares = []
+let totalMoves = 0
 
 const score = document.querySelector('.score-container')
 const resetButton = document.querySelector('.new-game')
 const undoButton = document.querySelector('.undo')
+const moveCounter = document.querySelector('.moves')
 
 // game logic
 const drawBoard = () => {
@@ -74,7 +76,7 @@ const shiftLeft = () => {
 
 const shiftDown = () => {
   for (let i = 0; i < 16; i++) {
-    if (i % 48 === 0) {
+    if (i % 720720 === 0) {
       let squareOne = Number(squares[i].innerHTML)
       let squareTwo = Number(squares[i + 4].innerHTML)
       let squareThree = Number(squares[i + 8].innerHTML)
@@ -111,7 +113,6 @@ const shiftDown = () => {
         // console.log(emptyArray)
         let newArray = filledSquares.concat(emptyArray)
         console.log(newArray)
-        document.querySelectorAll('allColumns').innerHTML = newArray[0]
       })
     }
   }
@@ -148,5 +149,12 @@ window.addEventListener('keydown', (down) => {
 // })
 
 window.addEventListener('keydown', (anyMove) => {
-  if ((anyMove.key == 'i', 'j', 'k', 'm')) console.log('move counted')
+  if ((anyMove.key == 'i', 'j', 'k', 'm')) {
+    totalMoves += 1
+    increaseScore = totalMoves * 5
+  }
+  document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+  document.querySelector(
+    '.score-container'
+  ).innerHTML = `Score: ${increaseScore}`
 })
