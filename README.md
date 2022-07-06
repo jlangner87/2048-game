@@ -44,4 +44,6 @@
 
 drawBoard and populateBoard functions are based on logic from [video] (https://youtu.be/aDn2g8XfSMc)
 
+keydown event listenr learned at [Eloquent_JavaScript] (https://eloquentjavascript.net/15_event.html)
+
 ---

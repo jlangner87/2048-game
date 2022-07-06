@@ -23,7 +23,7 @@
 }
 
 .mock-grid {
-  display: flex;
+  display: flexbox;
   flex-wrap: wrap;
   width: 600px;
   height: 600px;

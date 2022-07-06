@@ -36,34 +36,91 @@ const shiftRight = () => {
       let squareTwo = Number(squares[i + 1].innerHTML)
       let squareThree = Number(squares[i + 2].innerHTML)
       let squareFour = Number(squares[i + 3].innerHTML)
-
-      // console.log(squareOne)
-      // console.log(squareTwo)
-      // console.log(squareThree)
-      // console.log(squareFour)
-
       let rows = [squareOne, squareTwo, squareThree, squareFour]
-
-      console.log(rows)
-
-      // let filledSquares = rows.filter(filterNums)
-      // let emptySquares = 4 - filterNums.length
-      // let fillEmpty = Array(emptySquares).fill('')
-      // let newArray = fillEmpty.concat(filledSquares)
-
-      // squares[i].innerHTML = newArray[0]
-      // squares[i + 1].innerHTML = newArray[1]
-      // squares[i + 2].innerHTML = newArray[2]
-      // squares[i + 3].innerHTML = newArray[3]
-
-      // console.log(newArray)
+      const filledSquares = rows.filter((digit) => {
+        return digit >= 1
+      })
+      let empty = 4 - filledSquares.length
+      let emptyArray = Array(empty).fill('')
+      let newArray = emptyArray.concat(filledSquares)
+      squares[i].innerHTML = newArray[0]
+      squares[i + 1].innerHTML = newArray[1]
+      squares[i + 2].innerHTML = newArray[2]
+      squares[i + 3].innerHTML = newArray[3]
     }
   }
 }
-shiftRight()
+const shiftLeft = () => {
+  for (let i = 0; i < 16; i++) {
+    if (i % 4 === 0) {
+      let squareOne = Number(squares[i].innerHTML)
+      let squareTwo = Number(squares[i + 1].innerHTML)
+      let squareThree = Number(squares[i + 2].innerHTML)
+      let squareFour = Number(squares[i + 3].innerHTML)
+      let rows = [squareOne, squareTwo, squareThree, squareFour]
+      const filledSquares = rows.filter((digit) => {
+        return digit >= 1
+      })
+      let empty = 4 - filledSquares.length
+      let emptyArray = Array(empty).fill('')
+      let newArray = filledSquares.concat(emptyArray)
+      squares[i].innerHTML = newArray[0]
+      squares[i + 1].innerHTML = newArray[1]
+      squares[i + 2].innerHTML = newArray[2]
+      squares[i + 3].innerHTML = newArray[3]
+    }
+  }
+}
 
-// const shiftLeft = () => {}
-// const shiftDown = () => {}
+const shiftDown = () => {
+  for (let i = 0; i < 16; i++) {
+    if (i % 48 === 0) {
+      let squareOne = Number(squares[i].innerHTML)
+      let squareTwo = Number(squares[i + 4].innerHTML)
+      let squareThree = Number(squares[i + 8].innerHTML)
+      let squareFour = Number(squares[i + 12].innerHTML)
+
+      let squareFive = Number(squares[i + 1].innerHTML)
+      let squareSix = Number(squares[i + 5].innerHTML)
+      let squareSeven = Number(squares[i + 9].innerHTML)
+      let squareEight = Number(squares[i + 13].innerHTML)
+
+      let squareNine = Number(squares[i + 2].innerHTML)
+      let squareTen = Number(squares[i + 6].innerHTML)
+      let squareEleven = Number(squares[i + 10].innerHTML)
+      let squareTwelve = Number(squares[i + 14].innerHTML)
+
+      let squareThirteen = Number(squares[i + 3].innerHTML)
+      let squareFourteen = Number(squares[i + 7].innerHTML)
+      let squareFifteen = Number(squares[i + 11].innerHTML)
+      let squareSixteen = Number(squares[i + 15].innerHTML)
+
+      let columnOne = [squareOne, squareTwo, squareThree, squareFour]
+      let columnTwo = [squareFive, squareSix, squareSeven, squareEight]
+      let columnThree = [squareNine, squareTen, squareEleven, squareTwelve]
+      let columnFour = [
+        squareThirteen,
+        squareFourteen,
+        squareFifteen,
+        squareSixteen
+      ]
+      let allColumns = [columnOne, columnTwo, columnThree, columnFour]
+      console.log(allColumns)
+      const filledSquares = allColumns.filter((digit) => {
+        return digit >= 1
+      })
+      let empty = 4 - filledSquares.length
+      let emptyArray = Array(empty).fill('')
+      let newArray = filledSquares.concat(emptyArray)
+      squares[i].innerHTML = newArray[0]
+      squares[i + 1].innerHTML = newArray[1]
+      squares[i + 2].innerHTML = newArray[2]
+      squares[i + 3].innerHTML = newArray[3]
+    }
+  }
+}
+shiftDown()
+
 // const shiftUp = () => {}
 
 // event listeners
@@ -71,4 +128,29 @@ resetButton.addEventListener('click', () => {
   if (confirm('Are you sure you want to reset your game?') === true) {
     location.reload()
   }
+})
+//directional controls
+window.addEventListener('keydown', (right) => {
+  if (right.key == 'k') {
+    shiftRight()
+  }
+})
+window.addEventListener('keydown', (left) => {
+  if (left.key == 'j') {
+    shiftLeft()
+  }
+})
+window.addEventListener('keydown', (down) => {
+  if (down.key == 'm') {
+    shiftDown()
+  }
+})
+// window.addEventListener('keydown', (up) => {
+//   if (up.key == 'i') {
+//     shiftUp()
+//   }
+// })
+
+window.addEventListener('keydown', (anyMove) => {
+  if ((anyMove.key == 'i', 'j', 'k', 'm')) console.log('move counted')
 })
