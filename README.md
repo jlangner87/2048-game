@@ -42,6 +42,6 @@
 
 #### _Credits_
 
-**\***To be added
+Count-Up Timer [tutorial] (https://daily-dev-tips.com/posts/vanilla-javascript-timer/)
 
 ---

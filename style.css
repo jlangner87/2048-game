@@ -134,6 +134,11 @@ button {
   cursor: pointer;
 }
 
+.button-container {
+  vertical-align: baseline middle;
+  background-color: #228c80;
+}
+
 /* Style applied to HOW TO page */
 #how-to-play {
   background-color: #228c80;
