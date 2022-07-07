@@ -7,11 +7,11 @@ font-family:'Quicksand', sans-serif;
 
 .topBar {
   display: grid;
-  margin-top: 12px;
+  margin-top: 8px;
   background-color: #ffe1bd;
   text-align: center;
   color: #45444b;
-  font-size: 68px;
+  font-size: 48px;
 }
 
 .titleBar {
@@ -37,8 +37,8 @@ font-family:'Quicksand', sans-serif;
   display: grid;
   color: #45444b;
   text-align: center;
-  font-size: 42px;
-  margin-bottom: 12px;
+  font-size: 24px;
+  margin-bottom: 8px;
   }
 
 .top-buttons {
@@ -46,7 +46,6 @@ font-family:'Quicksand', sans-serif;
   justify-content: center;
   flex-direction: row;
   color: #45444b;
-  margin-top: 12px;
   margin-bottom: 12px;
   margin-left: 400px;
   margin-right: 400px;
@@ -135,9 +134,9 @@ font-family:'Quicksand', sans-serif;
 .bottom-display {
   display: flex;
   justify-content: space-around;
-  font-size: 24px;
+  font-size: 18px;
   color: #45444b;
-  margin-top: 12px;
+  margin-top: 8px;
   margin-bottom: 40px;
 }
 
