@@ -34,10 +34,6 @@ const populateBoard = () => {
   }
 }
 
-const losingCondition = () => {
-  // there are no empty squares
-}
-
 //Game Control & Board Change
 const shiftRight = () => {
   for (let i = 0; i < 16; i++) {
@@ -57,13 +53,25 @@ const shiftRight = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
-      // console.log(newArray)
+      // combine numbers here
+      // print combined numbers to dom
       const winningCondition = () => {
-        if (newArray.includes(2, 0)) {
-          console.log('This is true')
+        if (newArray.includes(2048, 0)) {
+          alert('Congratulations! You win!')
         }
       }
       winningCondition()
+
+      const losingCondition = () => {
+        let checkArray = [newArray[0], newArray[1], newArray[2], newArray[3]]
+        const isFull = (digit) => {
+          return digit >= 2
+        }
+        if (checkArray.every(isFull)) {
+          console.log('LOSE!!!')
+        }
+      }
+      losingCondition()
     }
   }
 }
@@ -86,17 +94,16 @@ const shiftLeft = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
-
       console.log(newArray)
-
-      //PICK UP HERE THURSDAY*** COMBINING LIKE NUMBERS INTO SUMS ***
-      // const sumLikeNumbers = () => {
-      //   for (let i = 0; i < newArray.length; i++) {
-      //     if (newArray[i].innerHTML === newArray[i + 1].innerHTML) {
-      //       console.log('DOUBLE')
-      //     }
-      //   }
-      // }
+      // combine numbers here
+      // print combined numbers to DOM
+      const winningCondition = () => {
+        if (newArray.includes(2048, 0)) {
+          alert('Congratulations! You win!')
+        }
+      }
+      winningCondition()
+      // losing condition
     }
   }
 }
@@ -141,6 +148,16 @@ const shiftDown = () => {
         let newArray = filledSquares.concat(emptyArray)
         console.log(newArray)
       })
+      // print new array to dom here
+      // combine numbers here
+      // print combined numbers to dom here
+      const winningCondition = () => {
+        if (newArray.includes(2048, 0)) {
+          alert('Congratulations! You win!')
+        }
+      }
+      winningCondition()
+      // losing condition here
     }
   }
 }
@@ -183,6 +200,16 @@ const shiftUp = () => {
         let newArray = emptyArray.concat(filledSquares)
         console.log(newArray)
       })
+      // print new array to dom here
+      // combine numbers here
+      // print combined numbers to dom here
+      const winningCondition = () => {
+        if (newArray.includes(2048, 0)) {
+          alert('Congratulations! You win!')
+        }
+      }
+      winningCondition()
+      // losing condition here
     }
   }
 }
