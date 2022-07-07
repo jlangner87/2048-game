@@ -221,7 +221,7 @@ resetButton.addEventListener('click', () => {
   }
 })
 //directional controls
-window.addEventListener('keydown', (right) => {
+document.addEventListener('keydown', (right) => {
   if (right.key == 'k') {
     shiftRight()
     populateBoard()
@@ -233,7 +233,7 @@ window.addEventListener('keydown', (right) => {
     ).innerHTML = `Score: ${increaseScore}`
   }
 })
-window.addEventListener('keydown', (left) => {
+document.addEventListener('keydown', (left) => {
   if (left.key == 'j') {
     shiftLeft()
     populateBoard()
@@ -245,7 +245,7 @@ window.addEventListener('keydown', (left) => {
     ).innerHTML = `Score: ${increaseScore}`
   }
 })
-window.addEventListener('keydown', (down) => {
+document.addEventListener('keydown', (down) => {
   if (down.key == 'm') {
     shiftDown()
     populateBoard()
@@ -257,7 +257,7 @@ window.addEventListener('keydown', (down) => {
     ).innerHTML = `Score: ${increaseScore}`
   }
 })
-window.addEventListener('keydown', (up) => {
+document.addEventListener('keydown', (up) => {
   if (up.key == 'i') {
     shiftUp()
     populateBoard()

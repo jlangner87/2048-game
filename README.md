@@ -32,11 +32,11 @@
 
 ### Image 1
 
-**\***To be added
+![Game_Board](screenshot.png)
 
 ### Image 2
 
-**\***To be added
+![How_To](how-to.png)
 
 ---
 
