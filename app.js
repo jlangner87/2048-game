@@ -8,7 +8,6 @@ const resetButton = document.querySelector('.new-game')
 const undoButton = document.querySelector('.undo')
 const moveCounter = document.querySelector('.moves')
 
-// game logic
 const drawBoard = () => {
   for (let i = 0; i < 16; i++) {
     square = document.createElement('div')
@@ -35,9 +34,6 @@ const populateBoard = () => {
   }
 }
 
-const winningCondition = () => {
-  //one square === 2048
-}
 const losingCondition = () => {
   // there are no empty squares
 }
@@ -61,10 +57,17 @@ const shiftRight = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
-      console.log(newArray)
+      // console.log(newArray)
+      const winningCondition = () => {
+        if (newArray.includes(2, 0)) {
+          console.log('This is true')
+        }
+      }
+      winningCondition()
     }
   }
 }
+
 const shiftLeft = () => {
   for (let i = 0; i < 16; i++) {
     if (i % 4 === 0) {
@@ -175,10 +178,8 @@ const shiftUp = () => {
         let filledSquares = elemnt.filter((digit) => {
           return digit >= 1
         })
-        // console.log(filledSquares)
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
-        // console.log(emptyArray)
         let newArray = emptyArray.concat(filledSquares)
         console.log(newArray)
       })
