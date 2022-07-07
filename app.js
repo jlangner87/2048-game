@@ -1,4 +1,4 @@
-// game variables
+// GLOBAL VARIABLES & FUNCTIONS
 const boardGrid = document.querySelector('.grid')
 let squares = []
 let totalMoves = 0
@@ -34,76 +34,56 @@ const populateBoard = () => {
   }
 }
 
-//Game Control & Board Change
-const shiftRight = () => {
+//GAME CONTROL & LOGIC
+const shiftUp = () => {
   for (let i = 0; i < 16; i++) {
-    if (i % 4 === 0) {
+    if (i % 48 === 0) {
       let squareOne = Number(squares[i].innerHTML)
-      let squareTwo = Number(squares[i + 1].innerHTML)
-      let squareThree = Number(squares[i + 2].innerHTML)
-      let squareFour = Number(squares[i + 3].innerHTML)
-      let rows = [squareOne, squareTwo, squareThree, squareFour]
-      const filledSquares = rows.filter((digit) => {
-        return digit >= 1
+      let squareTwo = Number(squares[i + 4].innerHTML)
+      let squareThree = Number(squares[i + 8].innerHTML)
+      let squareFour = Number(squares[i + 12].innerHTML)
+      let squareFive = Number(squares[i + 1].innerHTML)
+      let squareSix = Number(squares[i + 5].innerHTML)
+      let squareSeven = Number(squares[i + 9].innerHTML)
+      let squareEight = Number(squares[i + 13].innerHTML)
+      let squareNine = Number(squares[i + 2].innerHTML)
+      let squareTen = Number(squares[i + 6].innerHTML)
+      let squareEleven = Number(squares[i + 10].innerHTML)
+      let squareTwelve = Number(squares[i + 14].innerHTML)
+      let squareThirteen = Number(squares[i + 3].innerHTML)
+      let squareFourteen = Number(squares[i + 7].innerHTML)
+      let squareFifteen = Number(squares[i + 11].innerHTML)
+      let squareSixteen = Number(squares[i + 15].innerHTML)
+      let columnOne = [squareOne, squareTwo, squareThree, squareFour]
+      let columnTwo = [squareFive, squareSix, squareSeven, squareEight]
+      let columnThree = [squareNine, squareTen, squareEleven, squareTwelve]
+      let columnFour = [
+        squareThirteen,
+        squareFourteen,
+        squareFifteen,
+        squareSixteen
+      ]
+      let allColumns = [columnOne, columnTwo, columnThree, columnFour]
+      allColumns.forEach((elemnt) => {
+        let filledSquares = elemnt.filter((digit) => {
+          return digit >= 1
+        })
+        let empty = 4 - filledSquares.length
+        let emptyArray = Array(empty).fill('')
+        let newArray = emptyArray.concat(filledSquares)
+        //remove console log below when all features of the function work
+        console.log(newArray)
+        // print new array to dom here
+        // combine numbers here
+        // print combined numbers to dom here
+        const winningCondition = () => {
+          if (newArray.includes(2048, 0)) {
+            alert('Congratulations! You win!')
+          }
+        }
+        winningCondition()
+        // losing condition here
       })
-      let empty = 4 - filledSquares.length
-      let emptyArray = Array(empty).fill('')
-      let newArray = emptyArray.concat(filledSquares)
-      squares[i].innerHTML = newArray[0]
-      squares[i + 1].innerHTML = newArray[1]
-      squares[i + 2].innerHTML = newArray[2]
-      squares[i + 3].innerHTML = newArray[3]
-      // combine numbers here
-      // print combined numbers to dom
-      const winningCondition = () => {
-        if (newArray.includes(2048, 0)) {
-          alert('Congratulations! You win!')
-        }
-      }
-      winningCondition()
-
-      const losingCondition = () => {
-        let checkArray = [newArray[0], newArray[1], newArray[2], newArray[3]]
-        const isFull = (digit) => {
-          return digit >= 2
-        }
-        if (checkArray.every(isFull)) {
-          console.log('LOSE!!!')
-        }
-      }
-      losingCondition()
-    }
-  }
-}
-
-const shiftLeft = () => {
-  for (let i = 0; i < 16; i++) {
-    if (i % 4 === 0) {
-      let squareOne = Number(squares[i].innerHTML)
-      let squareTwo = Number(squares[i + 1].innerHTML)
-      let squareThree = Number(squares[i + 2].innerHTML)
-      let squareFour = Number(squares[i + 3].innerHTML)
-      let rows = [squareOne, squareTwo, squareThree, squareFour]
-      const filledSquares = rows.filter((digit) => {
-        return digit >= 1
-      })
-      let empty = 4 - filledSquares.length
-      let emptyArray = Array(empty).fill('')
-      let newArray = filledSquares.concat(emptyArray)
-      squares[i].innerHTML = newArray[0]
-      squares[i + 1].innerHTML = newArray[1]
-      squares[i + 2].innerHTML = newArray[2]
-      squares[i + 3].innerHTML = newArray[3]
-      console.log(newArray)
-      // combine numbers here
-      // print combined numbers to DOM
-      const winningCondition = () => {
-        if (newArray.includes(2048, 0)) {
-          alert('Congratulations! You win!')
-        }
-      }
-      winningCondition()
-      // losing condition
     }
   }
 }
@@ -141,11 +121,10 @@ const shiftDown = () => {
         let filledSquares = elemnt.filter((digit) => {
           return digit >= 1
         })
-        // console.log(filledSquares)
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
-        // console.log(emptyArray)
         let newArray = filledSquares.concat(emptyArray)
+        //remove console log below when all features of the function work
         console.log(newArray)
         // print new array to dom here
         // combine numbers here
@@ -162,65 +141,109 @@ const shiftDown = () => {
   }
 }
 
-const shiftUp = () => {
+const shiftLeft = () => {
   for (let i = 0; i < 16; i++) {
-    if (i % 48 === 0) {
+    if (i % 4 === 0) {
       let squareOne = Number(squares[i].innerHTML)
-      let squareTwo = Number(squares[i + 4].innerHTML)
-      let squareThree = Number(squares[i + 8].innerHTML)
-      let squareFour = Number(squares[i + 12].innerHTML)
-      let squareFive = Number(squares[i + 1].innerHTML)
-      let squareSix = Number(squares[i + 5].innerHTML)
-      let squareSeven = Number(squares[i + 9].innerHTML)
-      let squareEight = Number(squares[i + 13].innerHTML)
-      let squareNine = Number(squares[i + 2].innerHTML)
-      let squareTen = Number(squares[i + 6].innerHTML)
-      let squareEleven = Number(squares[i + 10].innerHTML)
-      let squareTwelve = Number(squares[i + 14].innerHTML)
-      let squareThirteen = Number(squares[i + 3].innerHTML)
-      let squareFourteen = Number(squares[i + 7].innerHTML)
-      let squareFifteen = Number(squares[i + 11].innerHTML)
-      let squareSixteen = Number(squares[i + 15].innerHTML)
-      let columnOne = [squareOne, squareTwo, squareThree, squareFour]
-      let columnTwo = [squareFive, squareSix, squareSeven, squareEight]
-      let columnThree = [squareNine, squareTen, squareEleven, squareTwelve]
-      let columnFour = [
-        squareThirteen,
-        squareFourteen,
-        squareFifteen,
-        squareSixteen
-      ]
-      let allColumns = [columnOne, columnTwo, columnThree, columnFour]
-      allColumns.forEach((elemnt) => {
-        let filledSquares = elemnt.filter((digit) => {
-          return digit >= 1
-        })
-        let empty = 4 - filledSquares.length
-        let emptyArray = Array(empty).fill('')
-        let newArray = emptyArray.concat(filledSquares)
-        console.log(newArray)
-        // print new array to dom here
-        // combine numbers here
-        // print combined numbers to dom here
-        const winningCondition = () => {
-          if (newArray.includes(2048, 0)) {
-            alert('Congratulations! You win!')
-          }
-        }
-        winningCondition()
-        // losing condition here
+      let squareTwo = Number(squares[i + 1].innerHTML)
+      let squareThree = Number(squares[i + 2].innerHTML)
+      let squareFour = Number(squares[i + 3].innerHTML)
+      let rows = [squareOne, squareTwo, squareThree, squareFour]
+      const filledSquares = rows.filter((digit) => {
+        return digit >= 1
       })
+      let empty = 4 - filledSquares.length
+      let emptyArray = Array(empty).fill('')
+      let newArray = filledSquares.concat(emptyArray)
+      squares[i].innerHTML = newArray[0]
+      squares[i + 1].innerHTML = newArray[1]
+      squares[i + 2].innerHTML = newArray[2]
+      squares[i + 3].innerHTML = newArray[3]
+      //remove console log below when all features of the function work
+      console.log(newArray)
+      // combine numbers here
+      // print combined numbers to DOM
+      const winningCondition = () => {
+        if (newArray.includes(2048, 0)) {
+          alert('Congratulations! You win!')
+        }
+      }
+      winningCondition()
+      // losing condition
     }
   }
 }
 
-// event listeners
+const shiftRight = () => {
+  const checkLosingCondition = () => {
+    console.log('The function IS being called')
+    window.onerror = () => {
+      alert('Sorry, you have lost!')
+    }
+  }
+  checkLosingCondition()
+  for (let i = 0; i < 16; i++) {
+    if (i % 4 === 0) {
+      let squareOne = Number(squares[i].innerHTML)
+      let squareTwo = Number(squares[i + 1].innerHTML)
+      let squareThree = Number(squares[i + 2].innerHTML)
+      let squareFour = Number(squares[i + 3].innerHTML)
+      let rows = [squareOne, squareTwo, squareThree, squareFour]
+      const filledSquares = rows.filter((digit) => {
+        return digit >= 2
+      })
+      let empty = 4 - filledSquares.length
+      let emptyArray = Array(empty).fill('')
+      let newArray = emptyArray.concat(filledSquares)
+      squares[i].innerHTML = newArray[0]
+      squares[i + 1].innerHTML = newArray[1]
+      squares[i + 2].innerHTML = newArray[2]
+      squares[i + 3].innerHTML = newArray[3]
+      const winningCondition = () => {
+        if (newArray.includes(2048, 0)) {
+          alert('Congratulations! You win!')
+        }
+      }
+      winningCondition()
+    }
+    //remove console log below when all features of the function work
+    // console.log(newArray)
+    //Combine Squares
+    // const combineSquares = () => {
+    //   let total = 0
+    //   for (let i = 0; i < newArray.length; i++) {
+    //     if (newArray[i] === newArray[i++]) {
+
+    //       console.log('We have a match!')
+    //     }
+    //   }
+
+    // }
+    // combineSquares()
+    // print combined numbers to dom
+  }
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// EVENT LISTENERS
 resetButton.addEventListener('click', () => {
   if (confirm('Are you sure you want to reset your game?') === true) {
     location.reload()
   }
 })
-//directional controls
+
 document.addEventListener('keydown', (right) => {
   if (right.key == 'k') {
     shiftRight()
@@ -233,6 +256,7 @@ document.addEventListener('keydown', (right) => {
     ).innerHTML = `Score: ${increaseScore}`
   }
 })
+
 document.addEventListener('keydown', (left) => {
   if (left.key == 'j') {
     shiftLeft()
@@ -245,6 +269,7 @@ document.addEventListener('keydown', (left) => {
     ).innerHTML = `Score: ${increaseScore}`
   }
 })
+
 document.addEventListener('keydown', (down) => {
   if (down.key == 'm') {
     shiftDown()
@@ -257,6 +282,7 @@ document.addEventListener('keydown', (down) => {
     ).innerHTML = `Score: ${increaseScore}`
   }
 })
+
 document.addEventListener('keydown', (up) => {
   if (up.key == 'i') {
     shiftUp()

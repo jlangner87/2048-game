@@ -65,11 +65,11 @@ font-family:'Quicksand', sans-serif;
 .homeButton-container-hs {
   display: flex;
   justify-content: center;
+  align-content: space-around;
   flex-direction: row;
   color: #45444b;
   margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 400px;
   margin-right: 400px; 
 }
   

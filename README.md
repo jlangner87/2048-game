@@ -30,11 +30,11 @@
 
 ## **_Screenshots_**
 
-### Image 1
+### Sample Game Board
 
 ![Game_Board](screenshot.png)
 
-### Image 2
+### HOW-TO
 
 ![How_To](how-to.png)
 
@@ -42,8 +42,14 @@
 
 #### _Credits_
 
-drawBoard and populateBoard functions are based on logic from [video] (https://youtu.be/aDn2g8XfSMc)
+drawBoard and populateBoard functions are based on logic from [Video](https://youtu.be/aDn2g8XfSMc)
 
-keydown event listenr learned at [Eloquent_JavaScript] (https://eloquentjavascript.net/15_event.html)
+.every Array method learned at [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
+.includes Array method learned at [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+
+window.onerror learned from [dotherightthing](https://gist.github.com/dotherightthing/cf0966bffc88abfec7af)
+
+keydown event listenr learned at [Eloquent_JavaScript](https://eloquentjavascript.net/15_event.html)
 
 ---
