@@ -36,6 +36,13 @@ const populateBoard = () => {
 
 //GAME CONTROL & LOGIC
 const shiftUp = () => {
+  const checkLosingCondition = () => {
+    console.log('The function IS being called')
+    window.onerror = () => {
+      alert('Sorry, you have lost!')
+    }
+  }
+  checkLosingCondition()
   for (let i = 0; i < 16; i++) {
     if (i % 48 === 0) {
       let squareOne = Number(squares[i].innerHTML)
@@ -71,24 +78,30 @@ const shiftUp = () => {
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
         let newArray = emptyArray.concat(filledSquares)
+        const checkWinningCondition = () => {
+          if (newArray.includes(2048, 0)) {
+            alert('Congratulations! You win!')
+          }
+        }
+        checkWinningCondition()
         //remove console log below when all features of the function work
         console.log(newArray)
         // print new array to dom here
         // combine numbers here
         // print combined numbers to dom here
-        const winningCondition = () => {
-          if (newArray.includes(2048, 0)) {
-            alert('Congratulations! You win!')
-          }
-        }
-        winningCondition()
-        // losing condition here
       })
     }
   }
 }
 
 const shiftDown = () => {
+  const checkLosingCondition = () => {
+    console.log('The function IS being called')
+    window.onerror = () => {
+      alert('Sorry, you have lost!')
+    }
+  }
+  checkLosingCondition()
   for (let i = 0; i < 16; i++) {
     if (i % 48 === 0) {
       let squareOne = Number(squares[i].innerHTML)
@@ -124,24 +137,30 @@ const shiftDown = () => {
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
         let newArray = filledSquares.concat(emptyArray)
+        const checkWinningCondition = () => {
+          if (newArray.includes(2048, 0)) {
+            alert('Congratulations! You win!')
+          }
+        }
+        checkWinningCondition()
         //remove console log below when all features of the function work
         console.log(newArray)
         // print new array to dom here
         // combine numbers here
         // print combined numbers to dom here
-        const winningCondition = () => {
-          if (newArray.includes(2048, 0)) {
-            alert('Congratulations! You win!')
-          }
-        }
-        winningCondition()
-        // losing condition here
       })
     }
   }
 }
 
 const shiftLeft = () => {
+  const checkLosingCondition = () => {
+    console.log('The function IS being called')
+    window.onerror = () => {
+      alert('Sorry, you have lost!')
+    }
+  }
+  checkLosingCondition()
   for (let i = 0; i < 16; i++) {
     if (i % 4 === 0) {
       let squareOne = Number(squares[i].innerHTML)
@@ -159,17 +178,16 @@ const shiftLeft = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
-      //remove console log below when all features of the function work
-      console.log(newArray)
-      // combine numbers here
-      // print combined numbers to DOM
-      const winningCondition = () => {
+      const checkWinningCondition = () => {
         if (newArray.includes(2048, 0)) {
           alert('Congratulations! You win!')
         }
       }
-      winningCondition()
-      // losing condition
+      checkWinningCondition()
+      //remove console log below when all features of the function work
+      console.log(newArray)
+      // combine numbers here
+      // print combined numbers to DOM
     }
   }
 }
@@ -199,27 +217,15 @@ const shiftRight = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
-      const winningCondition = () => {
+      const checkWinningCondition = () => {
         if (newArray.includes(2048, 0)) {
           alert('Congratulations! You win!')
         }
       }
-      winningCondition()
+      checkWinningCondition()
+      console.log(newArray)
     }
-    //remove console log below when all features of the function work
-    // console.log(newArray)
     //Combine Squares
-    // const combineSquares = () => {
-    //   let total = 0
-    //   for (let i = 0; i < newArray.length; i++) {
-    //     if (newArray[i] === newArray[i++]) {
-
-    //       console.log('We have a match!')
-    //     }
-    //   }
-
-    // }
-    // combineSquares()
     // print combined numbers to dom
   }
 }
