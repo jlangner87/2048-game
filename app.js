@@ -30,6 +30,13 @@ const populateBoard = () => {
 populateBoard()
 populateBoard()
 
+const winningCondition = () => {
+  //one square === 2048
+}
+const losingCondition = () => {
+  // there are no empty squares
+}
+
 //Game Control & Board Change
 const shiftRight = () => {
   for (let i = 0; i < 16; i++) {
@@ -49,6 +56,7 @@ const shiftRight = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
+      console.log(newArray)
     }
   }
 }
@@ -70,13 +78,24 @@ const shiftLeft = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
+
+      console.log(newArray)
+
+      //PICK UP HERE THURSDAY*** COMBINING LIKE NUMBERS INTO SUMS ***
+      // const sumLikeNumbers = () => {
+      //   for (let i = 0; i < newArray.length; i++) {
+      //     if (newArray[i].innerHTML === newArray[i + 1].innerHTML) {
+      //       console.log('DOUBLE')
+      //     }
+      //   }
+      // }
     }
   }
 }
 
 const shiftDown = () => {
   for (let i = 0; i < 16; i++) {
-    if (i % 720720 === 0) {
+    if (i % 48 === 0) {
       let squareOne = Number(squares[i].innerHTML)
       let squareTwo = Number(squares[i + 4].innerHTML)
       let squareThree = Number(squares[i + 8].innerHTML)
@@ -118,7 +137,49 @@ const shiftDown = () => {
   }
 }
 
-// const shiftUp = () => {}
+const shiftUp = () => {
+  for (let i = 0; i < 16; i++) {
+    if (i % 48 === 0) {
+      let squareOne = Number(squares[i].innerHTML)
+      let squareTwo = Number(squares[i + 4].innerHTML)
+      let squareThree = Number(squares[i + 8].innerHTML)
+      let squareFour = Number(squares[i + 12].innerHTML)
+      let squareFive = Number(squares[i + 1].innerHTML)
+      let squareSix = Number(squares[i + 5].innerHTML)
+      let squareSeven = Number(squares[i + 9].innerHTML)
+      let squareEight = Number(squares[i + 13].innerHTML)
+      let squareNine = Number(squares[i + 2].innerHTML)
+      let squareTen = Number(squares[i + 6].innerHTML)
+      let squareEleven = Number(squares[i + 10].innerHTML)
+      let squareTwelve = Number(squares[i + 14].innerHTML)
+      let squareThirteen = Number(squares[i + 3].innerHTML)
+      let squareFourteen = Number(squares[i + 7].innerHTML)
+      let squareFifteen = Number(squares[i + 11].innerHTML)
+      let squareSixteen = Number(squares[i + 15].innerHTML)
+      let columnOne = [squareOne, squareTwo, squareThree, squareFour]
+      let columnTwo = [squareFive, squareSix, squareSeven, squareEight]
+      let columnThree = [squareNine, squareTen, squareEleven, squareTwelve]
+      let columnFour = [
+        squareThirteen,
+        squareFourteen,
+        squareFifteen,
+        squareSixteen
+      ]
+      let allColumns = [columnOne, columnTwo, columnThree, columnFour]
+      allColumns.forEach((elemnt) => {
+        let filledSquares = elemnt.filter((digit) => {
+          return digit >= 1
+        })
+        // console.log(filledSquares)
+        let empty = 4 - filledSquares.length
+        let emptyArray = Array(empty).fill('')
+        // console.log(emptyArray)
+        let newArray = emptyArray.concat(filledSquares)
+        console.log(newArray)
+      })
+    }
+  }
+}
 
 // event listeners
 resetButton.addEventListener('click', () => {
@@ -130,28 +191,32 @@ resetButton.addEventListener('click', () => {
 window.addEventListener('keydown', (right) => {
   if (right.key == 'k') {
     shiftRight()
+    populateBoard()
   }
 })
 window.addEventListener('keydown', (left) => {
   if (left.key == 'j') {
     shiftLeft()
+    populateBoard()
   }
 })
 window.addEventListener('keydown', (down) => {
   if (down.key == 'm') {
     shiftDown()
+    populateBoard()
   }
 })
-// window.addEventListener('keydown', (up) => {
-//   if (up.key == 'i') {
-//     shiftUp()
-//   }
-// })
+window.addEventListener('keydown', (up) => {
+  if (up.key == 'i') {
+    shiftUp()
+    populateBoard()
+  }
+})
 
 window.addEventListener('keydown', (anyMove) => {
   if ((anyMove.key == 'i', 'j', 'k', 'm')) {
     totalMoves += 1
-    increaseScore = totalMoves * 5
+    increaseScore = totalMoves * 2
   }
   document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
   document.querySelector(

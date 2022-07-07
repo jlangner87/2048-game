@@ -28,7 +28,7 @@
   width: 600px;
   height: 600px;
   background-color: #228c80;
-  border-radius: 5%;
+  border-radius: 6%;
   border: 5px solid #45444b;
 }
 
@@ -42,8 +42,12 @@
   }
 
 .top-buttons {
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  align-content: space-around;
+
   color: #45444b;
   margin-top: 12px;
 }
@@ -56,8 +60,6 @@
   border: 2px solid #45444b;
   border-radius: 6%;
   margin-bottom: 12px;
-  margin-left: 35%;
-  margin-right: 5%;
   font-size: 22px;
   cursor: pointer;
 }
@@ -70,8 +72,17 @@
   border: 2px solid #45444b;
   border-radius: 6%;
   margin-bottom: 12px;
-  margin-right: 35%;
-  margin-left: 5%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.home {
+  background-color: #de670e;
+  color: #45444b;
+  height: 60px;
+  width: 120px;
+  border: 2px solid #45444b;
+  border-radius: 6%;
   font-size: 22px;
   cursor: pointer;
 }
@@ -137,6 +148,7 @@ button {
 .button-container {
   vertical-align: baseline middle;
   background-color: #228c80;
+  border-radius: 12%;
 }
 
 /* Style applied to HOW TO page */
