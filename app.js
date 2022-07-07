@@ -19,16 +19,21 @@ const drawBoard = () => {
 }
 drawBoard()
 
+const FirstPopulateBoard = () => {
+  let randomPosition = Math.floor(Math.random() * squares.length)
+  squares[randomPosition].innerHTML = 2
+}
+FirstPopulateBoard()
+FirstPopulateBoard()
+
 const populateBoard = () => {
   let randomPosition = Math.floor(Math.random() * squares.length)
-  if (squares[randomPosition].innerHTML == '') {
+  if (squares[randomPosition].innerHTML === '') {
     squares[randomPosition].innerHTML = 2
   } else {
     populateBoard()
   }
 }
-populateBoard()
-populateBoard()
 
 const winningCondition = () => {
   //one square === 2048
@@ -192,34 +197,47 @@ window.addEventListener('keydown', (right) => {
   if (right.key == 'k') {
     shiftRight()
     populateBoard()
+    totalMoves += 1
+    increaseScore = totalMoves * 2
+    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+    document.querySelector(
+      '.score-container'
+    ).innerHTML = `Score: ${increaseScore}`
   }
 })
 window.addEventListener('keydown', (left) => {
   if (left.key == 'j') {
     shiftLeft()
     populateBoard()
+    totalMoves += 1
+    increaseScore = totalMoves * 2
+    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+    document.querySelector(
+      '.score-container'
+    ).innerHTML = `Score: ${increaseScore}`
   }
 })
 window.addEventListener('keydown', (down) => {
   if (down.key == 'm') {
     shiftDown()
     populateBoard()
+    totalMoves += 1
+    increaseScore = totalMoves * 2
+    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+    document.querySelector(
+      '.score-container'
+    ).innerHTML = `Score: ${increaseScore}`
   }
 })
 window.addEventListener('keydown', (up) => {
   if (up.key == 'i') {
     shiftUp()
     populateBoard()
-  }
-})
-
-window.addEventListener('keydown', (anyMove) => {
-  if ((anyMove.key == 'i', 'j', 'k', 'm')) {
     totalMoves += 1
     increaseScore = totalMoves * 2
+    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+    document.querySelector(
+      '.score-container'
+    ).innerHTML = `Score: ${increaseScore}`
   }
-  document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
-  document.querySelector(
-    '.score-container'
-  ).innerHTML = `Score: ${increaseScore}`
 })
