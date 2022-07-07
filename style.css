@@ -1,8 +1,8 @@
 /* Style applied to all pages */
 * {
- background-color: #ffe1bd;
- margin: auto;
- font-family:'Quicksand', sans-serif;
+background-color: #ffe1bd;
+margin: auto;
+font-family:'Quicksand', sans-serif;
 }
 
 .topBar {
@@ -42,29 +42,39 @@
   }
 
 .top-buttons {
-  display: inline-flex;
-  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
   flex-direction: row;
-  align-content: center;
-  align-content: space-around;
-
   color: #45444b;
   margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.homeButton-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  color: #45444b;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.homeButton-container-hs {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  color: #45444b;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 400px;
+  margin-right: 400px; 
 }
   
 .new-game {
-  background-color: #de670e;
-  color: #45444b;
-  height: 60px;
-  width: 120px;
-  border: 2px solid #45444b;
-  border-radius: 6%;
-  margin-bottom: 12px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.undo {
   background-color: #de670e;
   color: #45444b;
   height: 60px;
@@ -83,8 +93,21 @@
   width: 120px;
   border: 2px solid #45444b;
   border-radius: 6%;
+  margin-bottom: 12px;
   font-size: 22px;
   cursor: pointer;
+}
+
+.home_howTo {
+  background-color: #de670e;
+  color: #45444b;
+  height: 60px;
+  width: 120px;
+  border: 2px solid #45444b;
+  border-radius: 6%;
+  margin-bottom: 12px;
+  font-size: 22px;
+  cursor: pointer;;
 }
   
 .grid {
@@ -158,8 +181,10 @@ button {
   font-size: 24px;
   text-align: left;
   margin-left: 24px;
+  margin-top: 30px;
   vertical-align: text-top;
-  text-justify: auto
+  text-justify: auto;
+  border-radius: 20%;
 }
 
 /* Style applied to high-score page */

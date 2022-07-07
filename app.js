@@ -147,17 +147,17 @@ const shiftDown = () => {
         // console.log(emptyArray)
         let newArray = filledSquares.concat(emptyArray)
         console.log(newArray)
-      })
-      // print new array to dom here
-      // combine numbers here
-      // print combined numbers to dom here
-      const winningCondition = () => {
-        if (newArray.includes(2048, 0)) {
-          alert('Congratulations! You win!')
+        // print new array to dom here
+        // combine numbers here
+        // print combined numbers to dom here
+        const winningCondition = () => {
+          if (newArray.includes(2048, 0)) {
+            alert('Congratulations! You win!')
+          }
         }
-      }
-      winningCondition()
-      // losing condition here
+        winningCondition()
+        // losing condition here
+      })
     }
   }
 }
@@ -199,17 +199,17 @@ const shiftUp = () => {
         let emptyArray = Array(empty).fill('')
         let newArray = emptyArray.concat(filledSquares)
         console.log(newArray)
-      })
-      // print new array to dom here
-      // combine numbers here
-      // print combined numbers to dom here
-      const winningCondition = () => {
-        if (newArray.includes(2048, 0)) {
-          alert('Congratulations! You win!')
+        // print new array to dom here
+        // combine numbers here
+        // print combined numbers to dom here
+        const winningCondition = () => {
+          if (newArray.includes(2048, 0)) {
+            alert('Congratulations! You win!')
+          }
         }
-      }
-      winningCondition()
-      // losing condition here
+        winningCondition()
+        // losing condition here
+      })
     }
   }
 }
