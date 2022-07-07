@@ -244,6 +244,7 @@ const shiftRight = () => {
 //
 //
 // EVENT LISTENERS
+
 resetButton.addEventListener('click', () => {
   if (confirm('Are you sure you want to reset your game?') === true) {
     location.reload()
