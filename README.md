@@ -12,13 +12,43 @@
 
 ---
 
+Hosted Site [Surge](2048-numbergame.surge.sh)
+
 ### **_Description_**
 
 #### This is a browser game written in JavaScript, CSS, and HTML. Users move numbered blocks around a playing grid- up, down, left, and right. When two blocks with the same number touch, they combine into one block and display the sum of the two numbers. Each move adds one more numbered block to the grid. When the user's blocks total 2048, they win. If they can make no more moves, they lose.
 
-## **_Notes_**
+## **Future Development Opportunity**
 
-#### When attempting to create a lose function that checks whether all indexes in the grid array, I kept getting an overflow error on the last click. Instead, the lose conditions are now set on the browswer producing an alert when a console error is triggered. Logically, it works, but I am sure this is not a best practice.
+### **Game Features Not Working**
+
+#### When shifting the tiles up or down, my function responds to the event listener and returns the correct array, I cannot figure out how to print it to the DOM.
+
+#### I cannot figure out how to isolate when two elements in the arrays are the same value and merge them into a single index as their sum.
+
+### **'Lost Game' Alert**
+
+#### When attempting to create a "lose" function that checks whether all indexes in the grid array, I kept getting an overflow error on the last click. Instead, the "lose" conditions are now set on the browser producing an alert when a console error is triggered. It serves its purpose, but this is not a best practice and needs to be changed.
+
+## **'New Game' Button**
+
+#### The new game button event listener calls a function that reloads the page. This is not industry standard, and I will be researching a way to start a new game without reloading the page.
+
+## **'Undo' Button**
+
+#### I have a plan to research and implement a feature that allows users to undo their previous move.
+
+## **High Scores**
+
+#### I have a plan to research and implement a “high-scores” page that will allow the top ten high scores to be permanently displayed.
+
+## **Timer**
+
+#### I have a plan to research and implement a functioning count-up timer that will display play time next to high scores.
+
+## **Color Changing Tiles**
+
+#### In furure verions of this game, I want the tiles to change color each time they merge into the next sum.
 
 ## **_Trello Board_**
 

@@ -19,14 +19,14 @@ const drawBoard = () => {
 drawBoard()
 
 const FirstPopulateBoard = () => {
-  let randomPosition = Math.floor(Math.random() * squares.length)
+  let randomPosition = Math.floor(Math.random() * 16)
   squares[randomPosition].innerHTML = 2
 }
 FirstPopulateBoard()
 FirstPopulateBoard()
 
 const populateBoard = () => {
-  let randomPosition = Math.floor(Math.random() * squares.length)
+  let randomPosition = Math.floor(Math.random() * 16)
   if (squares[randomPosition].innerHTML === '') {
     squares[randomPosition].innerHTML = 2
   } else {
@@ -34,10 +34,9 @@ const populateBoard = () => {
   }
 }
 
-//GAME CONTROL & LOGIC
+//GAME CONTROL
 const shiftUp = () => {
   const checkLosingCondition = () => {
-    console.log('The function IS being called')
     window.onerror = () => {
       alert('Sorry, you have lost!')
     }
@@ -78,17 +77,15 @@ const shiftUp = () => {
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
         let newArray = emptyArray.concat(filledSquares)
+        //
+        console.log(newArray)
+
         const checkWinningCondition = () => {
           if (newArray.includes(2048, 0)) {
             alert('Congratulations! You win!')
           }
         }
         checkWinningCondition()
-        //remove console log below when all features of the function work
-        console.log(newArray)
-        // print new array to dom here
-        // combine numbers here
-        // print combined numbers to dom here
       })
     }
   }
@@ -96,7 +93,6 @@ const shiftUp = () => {
 
 const shiftDown = () => {
   const checkLosingCondition = () => {
-    console.log('The function IS being called')
     window.onerror = () => {
       alert('Sorry, you have lost!')
     }
@@ -137,17 +133,13 @@ const shiftDown = () => {
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
         let newArray = filledSquares.concat(emptyArray)
+        //
         const checkWinningCondition = () => {
           if (newArray.includes(2048, 0)) {
             alert('Congratulations! You win!')
           }
         }
         checkWinningCondition()
-        //remove console log below when all features of the function work
-        console.log(newArray)
-        // print new array to dom here
-        // combine numbers here
-        // print combined numbers to dom here
       })
     }
   }
@@ -155,7 +147,6 @@ const shiftDown = () => {
 
 const shiftLeft = () => {
   const checkLosingCondition = () => {
-    console.log('The function IS being called')
     window.onerror = () => {
       alert('Sorry, you have lost!')
     }
@@ -184,17 +175,13 @@ const shiftLeft = () => {
         }
       }
       checkWinningCondition()
-      //remove console log below when all features of the function work
-      console.log(newArray)
-      // combine numbers here
-      // print combined numbers to DOM
+      //
     }
   }
 }
 
 const shiftRight = () => {
   const checkLosingCondition = () => {
-    console.log('The function IS being called')
     window.onerror = () => {
       alert('Sorry, you have lost!')
     }
@@ -223,26 +210,10 @@ const shiftRight = () => {
         }
       }
       checkWinningCondition()
-      console.log(newArray)
     }
-    //Combine Squares
-    // print combined numbers to dom
   }
 }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 // EVENT LISTENERS
 
 resetButton.addEventListener('click', () => {

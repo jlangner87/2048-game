@@ -1,4 +1,3 @@
-/* Style applied to all pages */
 * {
 background-color: #ffe1bd;
 margin: auto;
@@ -32,7 +31,6 @@ font-family:'Quicksand', sans-serif;
   border: 5px solid #45444b;
 }
 
-/* Style applied to gameboard page */
 .score-container {
   display: grid;
   color: #45444b;
