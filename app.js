@@ -36,6 +36,13 @@ const populateBoard = () => {
 
 //GAME CONTROL
 const shiftUp = () => {
+  populateBoard()
+  totalMoves += 1
+  increaseScore = totalMoves * 2
+  document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+  document.querySelector(
+    '.score-container'
+  ).innerHTML = `Score: ${increaseScore}`
   const checkLosingCondition = () => {
     window.onerror = () => {
       alert('Sorry, you have lost!')
@@ -77,9 +84,6 @@ const shiftUp = () => {
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
         let newArray = emptyArray.concat(filledSquares)
-        //
-        console.log(newArray)
-
         const checkWinningCondition = () => {
           if (newArray.includes(2048, 0)) {
             alert('Congratulations! You win!')
@@ -92,6 +96,13 @@ const shiftUp = () => {
 }
 
 const shiftDown = () => {
+  populateBoard()
+  totalMoves += 1
+  increaseScore = totalMoves * 2
+  document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+  document.querySelector(
+    '.score-container'
+  ).innerHTML = `Score: ${increaseScore}`
   const checkLosingCondition = () => {
     window.onerror = () => {
       alert('Sorry, you have lost!')
@@ -133,7 +144,6 @@ const shiftDown = () => {
         let empty = 4 - filledSquares.length
         let emptyArray = Array(empty).fill('')
         let newArray = filledSquares.concat(emptyArray)
-        //
         const checkWinningCondition = () => {
           if (newArray.includes(2048, 0)) {
             alert('Congratulations! You win!')
@@ -146,6 +156,13 @@ const shiftDown = () => {
 }
 
 const shiftLeft = () => {
+  populateBoard()
+  totalMoves += 1
+  increaseScore = totalMoves * 2
+  document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+  document.querySelector(
+    '.score-container'
+  ).innerHTML = `Score: ${increaseScore}`
   const checkLosingCondition = () => {
     window.onerror = () => {
       alert('Sorry, you have lost!')
@@ -175,12 +192,18 @@ const shiftLeft = () => {
         }
       }
       checkWinningCondition()
-      //
     }
   }
 }
 
 const shiftRight = () => {
+  populateBoard()
+  totalMoves += 1
+  increaseScore = totalMoves * 2
+  document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
+  document.querySelector(
+    '.score-container'
+  ).innerHTML = `Score: ${increaseScore}`
   const checkLosingCondition = () => {
     window.onerror = () => {
       alert('Sorry, you have lost!')
@@ -216,60 +239,32 @@ const shiftRight = () => {
 
 // EVENT LISTENERS
 
-resetButton.addEventListener('click', () => {
-  if (confirm('Are you sure you want to reset your game?') === true) {
-    location.reload()
-  }
-})
-
-document.addEventListener('keydown', (right) => {
-  if (right.key == 'k') {
-    shiftRight()
-    populateBoard()
-    totalMoves += 1
-    increaseScore = totalMoves * 2
-    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
-    document.querySelector(
-      '.score-container'
-    ).innerHTML = `Score: ${increaseScore}`
-  }
-})
-
-document.addEventListener('keydown', (left) => {
-  if (left.key == 'j') {
-    shiftLeft()
-    populateBoard()
-    totalMoves += 1
-    increaseScore = totalMoves * 2
-    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
-    document.querySelector(
-      '.score-container'
-    ).innerHTML = `Score: ${increaseScore}`
+document.addEventListener('keydown', (up) => {
+  if (up.key == 'i') {
+    shiftUp()
   }
 })
 
 document.addEventListener('keydown', (down) => {
   if (down.key == 'm') {
     shiftDown()
-    populateBoard()
-    totalMoves += 1
-    increaseScore = totalMoves * 2
-    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
-    document.querySelector(
-      '.score-container'
-    ).innerHTML = `Score: ${increaseScore}`
   }
 })
 
-document.addEventListener('keydown', (up) => {
-  if (up.key == 'i') {
-    shiftUp()
-    populateBoard()
-    totalMoves += 1
-    increaseScore = totalMoves * 2
-    document.querySelector('.moves').innerHTML = `Moves: ${totalMoves}`
-    document.querySelector(
-      '.score-container'
-    ).innerHTML = `Score: ${increaseScore}`
+document.addEventListener('keydown', (left) => {
+  if (left.key == 'j') {
+    shiftLeft()
+  }
+})
+
+document.addEventListener('keydown', (right) => {
+  if (right.key == 'k') {
+    shiftRight()
+  }
+})
+
+resetButton.addEventListener('click', () => {
+  if (confirm('Are you sure you want to reset your game?') === true) {
+    location.reload()
   }
 })

@@ -12,7 +12,7 @@
 
 ---
 
-Hosted Site [Surge](2048-numbergame.surge.sh)
+Hosted Site [Surge](http://2048-numbergame.surge.sh)
 
 ### **_Description_**
 
@@ -30,29 +30,25 @@ Hosted Site [Surge](2048-numbergame.surge.sh)
 
 #### When attempting to create a "lose" function that checks whether all indexes in the grid array, I kept getting an overflow error on the last click. Instead, the "lose" conditions are now set on the browser producing an alert when a console error is triggered. It serves its purpose, but this is not a best practice and needs to be changed.
 
-## **'New Game' Button**
+### **'New Game' Button**
 
 #### The new game button event listener calls a function that reloads the page. This is not industry standard, and I will be researching a way to start a new game without reloading the page.
 
-## **'Undo' Button**
+### **'Undo' Button**
 
 #### I have a plan to research and implement a feature that allows users to undo their previous move.
 
-## **High Scores**
+### **High Scores**
 
 #### I have a plan to research and implement a “high-scores” page that will allow the top ten high scores to be permanently displayed.
 
-## **Timer**
+### **Timer**
 
 #### I have a plan to research and implement a functioning count-up timer that will display play time next to high scores.
 
-## **Color Changing Tiles**
-
-#### In furure verions of this game, I want the tiles to change color each time they merge into the next sum.
-
 ## **_Trello Board_**
 
-| [Trello] https://trello.com/b/TnGyK7lh/browser-game-tbd |
+[Trello](https://trello.com/b/TnGyK7lh/browser-game-tbd)
 
 ### **_Technologies Used_**
 
