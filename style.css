@@ -51,13 +51,12 @@ font-family:'Quicksand', sans-serif;
 
 .homeButton-container {
   display: flex;
+  align-content: center;
   justify-content: center;
   flex-direction: row;
   color: #45444b;
   margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 400px;
-  margin-right: 400px;
 }
 
 .homeButton-container-hs {
@@ -67,8 +66,6 @@ font-family:'Quicksand', sans-serif;
   color: #45444b;
   margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 400px;
-  margin-right: 400px;
 }
   
 .new-game {
@@ -102,7 +99,19 @@ font-family:'Quicksand', sans-serif;
   width: 120px;
   border: 2px solid #45444b;
   border-radius: 6%;
-  margin-bottom: 12px;
+  margin: 0 auto;
+  font-size: 22px;
+  cursor: pointer;;
+}
+
+.home_hs {
+  background-color: #de670e;
+  color: #45444b;
+  height: 60px;
+  width: 120px;
+  border: 2px solid #45444b;
+  border-radius: 6%;
+  margin: 0 auto;
   font-size: 22px;
   cursor: pointer;;
 }
@@ -165,6 +174,7 @@ button {
 }
 
 .button-container {
+  margin-top: 54px;
   vertical-align: baseline middle;
   background-color: #228c80;
   border-radius: 12%;

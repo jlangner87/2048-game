@@ -186,6 +186,14 @@ const shiftLeft = () => {
       squares[i + 1].innerHTML = newArray[1]
       squares[i + 2].innerHTML = newArray[2]
       squares[i + 3].innerHTML = newArray[3]
+      let twoArray = newArray.filter((twos) => {
+        return twos === 2
+      })
+      let twoSum = twoArray.reduce((first, second) => first + second, 0)
+      let nonTwos = 4 - twoArray.length
+      let nonTwoArray = Array(nonTwos).fill(twoSum)
+      let nextArray = nonTwoArray.concat(twoArray)
+      squares[i].innerHTML = nextArray[0]
       const checkWinningCondition = () => {
         if (newArray.includes(2048, 0)) {
           alert('Congratulations! You win!')
@@ -238,7 +246,6 @@ const shiftRight = () => {
 }
 
 // EVENT LISTENERS
-
 document.addEventListener('keydown', (up) => {
   if (up.key == 'i') {
     shiftUp()

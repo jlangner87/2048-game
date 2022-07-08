@@ -20,11 +20,11 @@ Hosted Site [Surge](http://2048-numbergame.surge.sh)
 
 ## **Future Development Opportunity**
 
-### **Game Features Not Working**
+### **Feature Bugs**
 
 #### When shifting the tiles up or down, my function responds to the event listener and returns the correct array, I cannot figure out how to print it to the DOM.
 
-#### I cannot figure out how to isolate when two elements in the arrays are the same value and merge them into a single index as their sum.
+#### I can have figured out how to isolate duplicate numbers in the arrays and return their sum, but I am adding all duplicate numbers in the row array.
 
 ### **'Lost Game' Alert**
 
@@ -71,6 +71,8 @@ Hosted Site [Surge](http://2048-numbergame.surge.sh)
 ---
 
 #### _Credits_
+
+color palette sourced from [WixBlog](https://www.wix.com/blog/2016/05/colors-101-how-to-choose-the-right-website-color-schemes/)
 
 drawBoard and populateBoard functions are based on logic from [Video](https://youtu.be/aDn2g8XfSMc)
 
