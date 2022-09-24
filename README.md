@@ -4,7 +4,7 @@
 
 ---
 
-### By: Joshua Langner
+### By: Josh Langner
 
 ---
 
